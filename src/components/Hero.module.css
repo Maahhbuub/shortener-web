@@ -130,6 +130,97 @@
     }
 }
 
+/* ── Result card ─────────────────────────────── */
+.resultCard {
+    width: 100%;
+    max-width: 42rem;
+    background: white;
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    animation: slideIn 0.3s ease;
+    margin-top: 0.25rem;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.resultLabel {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--subtext);
+    margin-top: 0.5rem;
+    margin-bottom: -0.15rem;
+}
+
+.resultBody {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.resultLink {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.5rem 0;
+}
+
+.resultLink:hover {
+    text-decoration: underline;
+}
+
+.copyBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.copyBtn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.copyBtn:active {
+    transform: translateY(0);
+}
+
+.copiedBtn {
+    background: #2d9e6b;
+}
+
+@media (max-width: 600px) {
+    .resultCard {
+        margin: 0 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ── Footer ──────────────────────────────────── */
 .footer {
     color: var(--subtext);
     font-size: 0.8rem;
