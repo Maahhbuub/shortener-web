@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary: #d37353;
+  --secondary: #1A1C1E;
+  --badge: #ecfdf5;
+  --badge-color: #10b981;
+
+  --bg-main: #f9f9fa;
+  --bg-alt: #f3f3f4;
+
+  --text: #1a1c1d;
+  --subtext: #5d5e61;
+
+  /* --bg-main: #fff8f7;
+  --bg-alt: #fff0ef; */
+}
+
+.box-grid {
+  background-image:
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+  background-size: 50px 50px;
+}
