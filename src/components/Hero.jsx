@@ -40,12 +40,11 @@ function Hero() {
 
     return (
         <section className={`${styles.hero} box-grid`} id="hero">
-            <p className={styles.topBadge}>Now with AI Analytics</p>
             <h1 className={styles.heading}>
-                Compact links, <br />
-                <span className={styles.track}>Limitless possibilities.</span>
+                Compact Links <br />
+                <span className={styles.track}>Limitless Possibilities</span>
             </h1>
-            <p className={styles.subHeading}>Experience the high-end link management. <br /> Clean, fast, and reliable infrastructure for your digital presence.</p>
+            <p className={styles.subHeading}>Shorten, share, and manage your links easily. Fast, reliable, and built for everyday use.</p>
 
             <div className={styles.URL}>
                 <form action="#" onSubmit={handleSubmit}>
@@ -83,7 +82,7 @@ function Hero() {
                 </>
             )}
 
-            <p className={styles.footer}>No credit card required. Free 7-day trial of Pro features.</p>
+            <p className={styles.footer}>Fast, simple, and free URL shortening.</p>
         </section>
     )
 }

@@ -10,22 +10,12 @@
     gap: 0.5rem;
 }
 
-.topBadge {
-    font-size: 0.625rem;
-    background-color: #ffdad6;
-    padding: 4px 12px;
-    border-radius: 2rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 .heading {
     font-size: 4rem;
     text-align: center;
     color: var(--text);
     letter-spacing: -3px;
-    line-height: 3.5rem;
+    line-height: 4rem;
     margin-bottom: 1rem;
 }
 

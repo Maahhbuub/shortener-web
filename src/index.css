@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Hanken Grotesk", sans-serif; */
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -17,9 +19,6 @@
 
   --text: #1a1c1d;
   --subtext: #5d5e61;
-
-  /* --bg-main: #fff8f7;
-  --bg-alt: #fff0ef; */
 }
 
 .box-grid {
