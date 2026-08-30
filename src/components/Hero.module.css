@@ -85,6 +85,14 @@
     border: none;
     flex: 1;
     min-width: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.URL input::placeholder {
+    font-weight: 400;
+    color: #b0b3b8;
 }
 
 .URL button {
@@ -97,7 +105,6 @@
     cursor: pointer;
     font-weight: bold;
     white-space: nowrap;
-    /* It prevents text from going to the next line */
     flex-shrink: 0;
 }
 
@@ -130,7 +137,6 @@
     }
 }
 
-/* ── Result card ─────────────────────────────── */
 .resultCard {
     width: 100%;
     max-width: 42rem;
@@ -169,7 +175,7 @@
 .resultLink {
     flex: 1;
     min-width: 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--primary);
     text-decoration: none;
@@ -220,7 +226,6 @@
     }
 }
 
-/* ── Footer ──────────────────────────────────── */
 .footer {
     color: var(--subtext);
     font-size: 0.8rem;
