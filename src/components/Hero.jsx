@@ -44,7 +44,6 @@ function Hero() {
                 Compact Links <br />
                 <span className={styles.track}>Limitless Possibilities</span>
             </h1>
-            <p className={styles.subHeading}>Shorten, share, and manage your links easily. Fast, reliable, and built for everyday use.</p>
 
             <div className={styles.URL}>
                 <form action="#" onSubmit={handleSubmit}>
@@ -57,29 +56,19 @@ function Hero() {
             </div>
 
             {short && (
-                <>
-                    <span className={styles.resultLabel}>Your short link</span>
-                    <div className={styles.resultCard}>
-                        <div className={styles.resultBody}>
-                            <a
-                                href={short}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.resultLink}
-                            >
-                                {short}
-                            </a>
-                            <button
-                                type="button"
-                                className={`${styles.copyBtn} ${copied ? styles.copiedBtn : ""}`}
-                                onClick={handleCopy}
-                                title="Copy short link"
-                            >
-                                {copied ? <><Check size={15} /> Copied!</> : <><Copy size={15} /> Copy</>}
-                            </button>
-                        </div>
-                    </div>
-                </>
+                <div className={styles.resultRow}>
+                    <span className={styles.resultLabel}>Your short link:</span>
+                    <a href={short} target="_blank" rel="noopener noreferrer" className={styles.resultLink}>
+                        {short}
+                    </a>
+                    <button
+                        type="button"
+                        className={`${styles.copyBtn} ${copied ? styles.copiedBtn : ""}`}
+                        onClick={handleCopy}
+                    >
+                        {copied ? <><Check size={14} /> Copied!</> : <><Copy size={14} /> Copy</>}
+                    </button>
+                </div>
             )}
 
             <p className={styles.footer}>Fast, simple, and free URL shortening.</p>

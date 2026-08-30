@@ -11,36 +11,24 @@
 }
 
 .heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     color: var(--text);
     letter-spacing: -3px;
     line-height: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 @media (max-width: 600px) {
     .heading {
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: 3rem;
+        letter-spacing: -2px;
     }
 }
 
 .heading .track {
     color: var(--primary);
-}
-
-.subHeading {
-    font-size: 0.9rem;
-    color: var(--subtext);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 600px) {
-    .subHeading {
-        font-size: 0.8rem;
-    }
 }
 
 .URL {
@@ -70,7 +58,7 @@
 
 .URL input {
     background: white;
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     outline: none;
     border: none;
     flex: 1;
@@ -88,7 +76,7 @@
 .URL button {
     background: var(--primary);
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 0.5rem;
     outline: none;
     border: none;
@@ -127,44 +115,35 @@
     }
 }
 
-.resultCard {
-    width: 100%;
-    max-width: 42rem;
-    background: white;
-    border-radius: 1rem;
-    padding: 0.75rem 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    animation: slideIn 0.3s ease;
-    margin-top: 0.25rem;
-}
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resultRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    animation: slideIn 0.25s ease;
 }
 
 .resultLabel {
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--subtext);
-    margin-top: 0.5rem;
-    margin-bottom: -0.15rem;
-}
-
-.resultBody {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    white-space: nowrap;
 }
 
 .resultLink {
-    flex: 1;
-    min-width: 0;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--primary);
@@ -172,7 +151,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0.5rem 0;
+    max-width: 22rem;
 }
 
 .resultLink:hover {
@@ -182,16 +161,15 @@
 .copyBtn {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.3rem;
     background: var(--primary);
     color: white;
     border: none;
-    border-radius: 0.5rem;
-    padding: 0.55rem 1rem;
-    font-size: 0.85rem;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
     font-weight: 700;
     cursor: pointer;
-    flex-shrink: 0;
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.15s ease;
 }
@@ -209,12 +187,7 @@
     background: #2d9e6b;
 }
 
-@media (max-width: 600px) {
-    .resultCard {
-        margin: 0 1rem;
-        padding: 0.75rem 1rem;
-    }
-}
+
 
 .footer {
     color: var(--subtext);
