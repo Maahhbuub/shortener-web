@@ -1,0 +1,243 @@
+/* ── Content container ───────────────────────────────── */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Brand pill ──────────────────────────────────────── */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    margin-bottom: 0.5rem;
+}
+
+.brandIcon {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* ── 404 Glitch number ───────────────────────────────── */
+.errorCode {
+    line-height: 1;
+    margin: 0.25rem 0;
+}
+
+.glitch {
+    font-size: clamp(6rem, 18vw, 11rem);
+    font-weight: 900;
+    letter-spacing: -6px;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    user-select: none;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+.glitch::before {
+    color: var(--primary);
+    animation: glitchTop 3s infinite linear;
+    clip-path: polygon(0 0, 100% 0, 100% 38%, 0 38%);
+}
+
+.glitch::after {
+    color: #5d5e61;
+    animation: glitchBot 3s infinite linear;
+    clip-path: polygon(0 62%, 100% 62%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchTop {
+    0%,  92%          { transform: translate(0, 0);         opacity: 1; }
+    93%               { transform: translate(-3px, -2px);   opacity: 0.8; }
+    94%               { transform: translate( 3px,  1px);   opacity: 0.8; }
+    95%               { transform: translate(-2px,  2px);   opacity: 0.8; }
+    96%, 100%         { transform: translate(0, 0);         opacity: 1; }
+}
+
+@keyframes glitchBot {
+    0%,  92%          { transform: translate(0, 0);         opacity: 1; }
+    93%               { transform: translate( 3px,  2px);   opacity: 0.8; }
+    94%               { transform: translate(-3px, -1px);   opacity: 0.8; }
+    95%               { transform: translate( 2px, -2px);   opacity: 0.8; }
+    96%, 100%         { transform: translate(0, 0);         opacity: 1; }
+}
+
+/* ── Animated divider ────────────────────────────────── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
+}
+
+.dividerDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.7;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.dividerLine {
+    width: 80px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50%       { transform: scale(1.4); opacity: 1; }
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+}
+
+/* ── Title & description ─────────────────────────────── */
+.title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--subtext);
+    line-height: 1.6;
+    max-width: 28rem;
+    margin: 0;
+}
+
+/* ── Action buttons ──────────────────────────────────── */
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.primaryBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(211, 115, 83, 0.35);
+}
+
+.primaryBtn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(211, 115, 83, 0.45);
+}
+
+.primaryBtn:active {
+    transform: translateY(0);
+}
+
+.secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: white;
+    color: var(--text);
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border: 1.5px solid #e5e7eb;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.secondaryBtn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.secondaryBtn:active {
+    transform: translateY(0);
+}
+
+/* ── Footer hint ─────────────────────────────────────── */
+.hint {
+    font-size: 0.78rem;
+    color: var(--subtext);
+    margin-top: 0.25rem;
+}
+
+.hintLink {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hintLink:hover {
+    text-decoration: underline;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 480px) {
+    .glitch {
+        letter-spacing: -3px;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

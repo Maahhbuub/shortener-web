@@ -27,3 +27,25 @@
     linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
   background-size: 50px 50px;
 }
+
+/* Shared full-height section base */
+.page-section {
+  position: relative;
+  min-height: 100dvh;
+  background-color: var(--bg-main);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shared particle canvas overlay */
+.page-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
