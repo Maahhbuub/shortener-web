@@ -4,9 +4,9 @@ import { Link2, Copy, Check } from 'lucide-react';
 
 import api from "../api/api";
 import { useParticles } from "../hooks/useParticles";
+import toast from 'react-hot-toast';
 
 function Hero() {
-
     const canvasRef = useParticles();
     const [url, setUrl] = useState("");
     const [short, setShort] = useState("");
@@ -29,13 +29,30 @@ function Hero() {
     let handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (!url) {
+            toast.error("Link can't be empty!", {
+                position: "top-center",
+            });
+            return;
+        }
+
         try {
             const res = await api.post('/', { longUrl: url });
-
             let shortUrl = "http://localhost:5000/" + res.data.code
             setShort(shortUrl);
+
+            toast.success(res.data.message, {
+                position: "top-center",
+                iconTheme: {
+                    primary: "#735cdd",
+                },
+            });
         } catch (err) {
             console.error(err.response?.data || err.message);
+            const message = err.response?.data?.message || err.response?.data || err.message;
+            toast.error(message, {
+                position: "top-center",
+            });
         }
         setUrl("");
     }
@@ -46,15 +63,15 @@ function Hero() {
 
             <div className={styles.content}>
                 <h1 className={styles.heading}>
-                    Compact Links <br />
-                    <span className={styles.track}>Limitless Possibilities</span>
+                    Shrink the Link <br />
+                    <span className={styles.track}>Expand the Possibilities</span>
                 </h1>
 
                 <div className={styles.URL}>
                     <form action="#" onSubmit={handleSubmit}>
                         <div className={styles.URLInput}>
                             <Link2 />
-                            <input value={url} onChange={handleUrl} type="text" id="" placeholder="Paste your URL here..." />
+                            <input value={url} onChange={handleUrl} type="text" id="url" placeholder="Paste your URL here..." />
                         </div>
                         <button type="submit">Shorten Now</button>
                     </form>
