@@ -1,7 +1,3 @@
-.hero {
-    /* padding handled by .content so the canvas fills edge-to-edge */
-}
-
 /* Sits above the particle canvas */
 .content {
     position: relative;
@@ -199,6 +195,7 @@
 
     .copyBtn {
         flex-basis: 100%;
+        width: fit-content;
         justify-content: center;
         margin: 0 auto;
     }

@@ -9,7 +9,7 @@ function NotFound() {
         <div className={`page-section box-grid`}>
             <canvas ref={canvasRef} className="page-canvas" />
 
-            <div className={styles.container}>
+            <div className={`${styles.container} fade-up`}>
                 {/* 404 glitch number */}
                 <div className={styles.errorCode} aria-label="404">
                     <span className={styles.glitch} data-text="404">404</span>

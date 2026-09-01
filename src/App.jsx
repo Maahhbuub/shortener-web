@@ -10,7 +10,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} /> {/* 404 fallback */}
+      <Route path="/null" element={<NotFound />} />
     </Routes>
   )
 }

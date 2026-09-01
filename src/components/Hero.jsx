@@ -65,7 +65,7 @@ function Hero() {
         <section className={`${styles.hero} page-section box-grid`} id="hero">
             <canvas ref={canvasRef} className="page-canvas" />
 
-            <div className={styles.content}>
+            <div className={`${styles.content} fade-up`}>
                 <h1 className={styles.heading}>
                     Shrink the Link <br />
                     <span className={styles.track}>Expand the Possibilities</span>
