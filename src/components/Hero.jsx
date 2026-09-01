@@ -40,7 +40,7 @@ function Hero() {
         setLoading(true);
         try {
             const res = await api.post('/', { longUrl: url });
-            let shortUrl = import.meta.env.VITE_API_BASE_URL + res.data.code
+            let shortUrl = window.location.origin + "/" + res.data.code
             setShort(shortUrl);
 
             toast.success(res.data.message, {
