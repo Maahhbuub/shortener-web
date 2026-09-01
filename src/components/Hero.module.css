@@ -192,6 +192,18 @@
     background: #9883f5;
 }
 
+@media (max-width: 600px) {
+    .resultRow {
+        justify-content: center;
+    }
+
+    .copyBtn {
+        flex-basis: 100%;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
 
 
 .footer {
