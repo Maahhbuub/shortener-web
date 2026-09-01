@@ -11,6 +11,7 @@ function Hero() {
     const [url, setUrl] = useState("");
     const [short, setShort] = useState("");
     const [copied, setCopied] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleCopy = async () => {
         try {
@@ -36,6 +37,7 @@ function Hero() {
             return;
         }
 
+        setLoading(true);
         try {
             const res = await api.post('/', { longUrl: url });
             let shortUrl = import.meta.env.VITE_API_BASE_URL + res.data.code
@@ -53,8 +55,10 @@ function Hero() {
             toast.error(message, {
                 position: "top-center",
             });
+        } finally {
+            setLoading(false);
+            setUrl("");
         }
-        setUrl("");
     }
 
     return (
@@ -73,7 +77,7 @@ function Hero() {
                             <Link2 />
                             <input value={url} onChange={handleUrl} type="text" id="url" placeholder="Paste your URL here..." />
                         </div>
-                        <button type="submit">Shorten Now</button>
+                        <button type="submit" disabled={loading} className={loading ? "btn-loading" : ""}>Shorten Now</button>
                     </form>
                 </div>
 

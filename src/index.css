@@ -49,3 +49,31 @@
   pointer-events: none;
   z-index: 0;
 }
+
+/* ── Reusable button loader ─────────────────────────────────────────────── */
+.btn-loading {
+  position: relative;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: transparent !important; 
+  opacity: 0.6 !important;
+  /* filter: saturate(0.6) !important; */
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--btn-spinner-color, white);
+  border-right-color: var(--btn-spinner-color, white);
+  animation: btn-spin 0.65s linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
