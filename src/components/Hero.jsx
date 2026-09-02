@@ -1,6 +1,8 @@
 import styles from "./Hero.module.css"
 import { useState } from "react";
 import { Link2, Copy, Check } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import api from "../api/api";
 import { useParticles } from "../hooks/useParticles";
@@ -99,6 +101,8 @@ function Hero() {
 
                 <p className={styles.footer}>Fast, simple, and free URL shortening.</p>
             </div>
+
+            <div className={`${styles.owner}`}>Made with <FontAwesomeIcon icon={faHeart} /> by Mahbub</div>
         </section>
     )
 }

@@ -202,8 +202,6 @@
     }
 }
 
-
-
 .footer {
     color: var(--subtext);
     font-size: 0.8rem;
@@ -214,5 +212,22 @@
 @media (max-width: 600px) {
     .footer {
         font-size: 0.6rem;
+    }
+}
+
+.owner {
+    position: absolute;
+    bottom: 2%;
+    right: 1%;
+    color: var(--subtext);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .owner {
+        left: 0;
+        right: 0;
     }
 }
